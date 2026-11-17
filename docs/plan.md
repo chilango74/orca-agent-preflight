@@ -25,7 +25,7 @@ non-applicable launches stay unchanged. POSIX-shell scope is explicit.
   guardedCommand(workspace, preparation, original) in src/command.mjs.
 - [x] Run Orca plugin test/validate/check, TypeScript checking and Node shell tests.
 - [x] Independent review; address material findings with regression tests.
-- [ ] Publish README, MIT license, CI and v0.1.0; add the orca-plugin topic and
+- [x] Publish README, MIT license, CI and v0.1.0; add the orca-plugin topic and
   read the actual community-listing status.
 
 ## Review and verification
@@ -42,3 +42,8 @@ incomplete or ambiguous identity is refused. Preparation has normal POSIX exit
 semantics and no implicit timeout. Public installation and directory indexing
 are verified during publication and recorded in issue #1, not inferred from
 these local checks. MIT LICENSE and CONTRIBUTING.md were checked by the author.
+
+Publication verified 2026-11-17: v0.1.0, the `orca-plugin` topic, public
+installation validation and successful CI runs. The live directory page
+https://orca.dev/plugins/chilango74/orca-agent-preflight shows the plugin as
+Community · unreviewed. It is separate from the official Stably collection.
