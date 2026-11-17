@@ -1,0 +1,42 @@
+{
+  "manifestVersion": 2,
+  "id": "agent-preflight",
+  "name": "Agent Preflight",
+  "version": "0.1.0",
+  "description": "Run a configurable preparation command before terminal agents start in local Git workspaces.",
+  "engines": {
+    "orca": ">=1.4.259"
+  },
+  "execution": "trusted-worker",
+  "pluginApi": 1,
+  "main": "src/worker.ts",
+  "license": "MIT",
+  "repository": "https://github.com/chilango74/orca-agent-preflight",
+  "capabilities": [
+    {
+      "kind": "workspace:read"
+    },
+    {
+      "kind": "settings:own"
+    }
+  ],
+  "contributes": {
+    "hooks": [
+      {
+        "event": "agent.launch.before",
+        "onError": "deny"
+      }
+    ],
+    "settings": [
+      {
+        "key": "command",
+        "title": "Preparation command",
+        "type": "string",
+        "default": "",
+        "maxLength": 4096,
+        "multiline": true,
+        "description": "POSIX shell command to run before a terminal agent in a local Git workspace. PREFLIGHT_WORKSPACE contains its path. Empty means no preparation. A nonzero exit prevents the agent from starting."
+      }
+    ]
+  }
+}
